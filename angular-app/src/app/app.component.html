@@ -5,6 +5,7 @@
 @if (visible) {
 <div>
   <h2> {{title}} </h2>
+  <div>Total : {{counter}}</div>
 </div>
   @if (users!= undefined && users.length > 0) {
 
@@ -21,7 +22,7 @@
   No Habilitado
 }
 
-<app-counter [title]="subTitle"></app-counter>
+<app-counter [title]="subTitle" (counterEmit)="setCounter($event)"></app-counter>
 <!-- <div *ngIf="visible; else notEnable">
 <h2> {{title}} </h2>
 </div>
