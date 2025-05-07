@@ -1,9 +1,31 @@
-<div *ngIf="visible; else notEnable">
+<button (click)="setVisible()">
+  {{visible? 'Ocultar' : 'Mostrar'}}
+</button>
+
+@if (visible) {
+<div>
+  <h2> {{title}} </h2>
+</div>
+  @if (users!= undefined && users.length > 0) {
+
+  <ul>
+    @for (user of users; track $index) {
+    <li> {{$index}} {{user}}</li>
+    }
+  </ul>
+
+  }@else {
+    No existen valores
+  }
+} @else {
+  No Habilitado
+}
+
+<app-counter [title]="subTitle"></app-counter>
+<!-- <div *ngIf="visible; else notEnable">
 <h2> {{title}} </h2>
 </div>
-<button (click)="setVisible()">
-{{visible? 'Ocultar' : 'Mostrar'}}
-</button>
+
 <ul *ngIf="(users!= undefined && users.length > 0) else isEmpty">
   <li *ngFor="let user of users; index as i"> {{i}} {{user}}</li>
  </ul>
@@ -16,4 +38,4 @@ No existen valores
 <ng-template #notEnable>
 
 No Habilitado
-  </ng-template>
+  </ng-template> -->
