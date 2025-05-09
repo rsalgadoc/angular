@@ -65,3 +65,17 @@ import Swal from 'sweetalert2';
 ```bash
 npm install sweetalert2
 ```
+
+Install redux
+
+```bash
+ng add @ngrx/store@latest
+```
+
+```bash
+ng add @ngrx/store-devtools@latest
+```
+
+```bash
+ng add @ngrx/effects@latest
+```
