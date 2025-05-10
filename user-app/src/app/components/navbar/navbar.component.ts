@@ -8,6 +8,7 @@ import { User } from '../../models/user';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
-
   @Input() users: User[] = [];
+
+  @Input() paginator = {}
 }
