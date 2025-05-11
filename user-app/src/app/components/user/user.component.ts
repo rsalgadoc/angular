@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { UserService } from '../../services/user.service';
-import { SharingDataService } from '../../services/sharing-data.service';
 import { PaginatorComponent } from '../paginator/paginator.component';
 import { AuthService } from '../../services/auth.service';
 import { Store } from '@ngrx/store';
@@ -20,12 +18,10 @@ export class UserComponent implements OnInit {
 
   users: User[] = [];
   paginator: any = {};
-  loading : boolean = true;
+  loading: boolean = true;
 
   constructor(
     private store: Store<{ users: any }>,
-    private service: UserService,
-    private sharingData: SharingDataService,
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute) {

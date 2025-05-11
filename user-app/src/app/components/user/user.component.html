@@ -1,17 +1,22 @@
-@if(loading){
-<div class="spinner-border text-primary" role="status">
+@if (loading) {
+<div class="spinner-border text-primary d-block" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
-}@else{
+} @else {
+
 <h3>{{title}}</h3>
 
 @if(admin){
-    <button class="btn btn-primary my-3" [routerLink]="['/users/create']">Crear Usuario</button>
+<button class="btn btn-primary my-3" [routerLink]="['/users/create']">Crear Usuario</button>
 }
+
+
 
 @if (users.length == 0) {
 <div class="alert alert-warning">No hay registros en el sistema!</div>
 } @else {
+
+
 <table class="table table-hover table-striped">
     <thead>
         <tr>
@@ -51,5 +56,6 @@
     </tbody>
 </table>
 }
+
 <paginator [paginator]="paginator" [url]="'/users/page'" />
 }
